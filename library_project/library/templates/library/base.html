@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Library{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Library System</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'books_by_genre' %}">Books by Genre</a></li>
+                <li><a href="{% url 'genres_by_author' %}">Genres by Author</a></li>
+                <li><a href="{% url 'first_five_books' %}">First 5 Books</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Library System</p>
+    </footer>
+</body>
+</html>
